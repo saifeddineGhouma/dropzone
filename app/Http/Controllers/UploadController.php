@@ -16,7 +16,7 @@ class UploadController extends Controller
     public function fileStore(Request $request)
     {
         $image = $request->file('file');
-        dd($image);
+
         $imageName = $image->getClientOriginalName();
         $image->move(public_path('dropzone'),$imageName);
 

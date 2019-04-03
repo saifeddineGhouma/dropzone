@@ -15,7 +15,7 @@
     <form method="post" action="{{url('image/upload/store')}}" enctype="multipart/form-data"
           class="dropzone" id="dropzone">
         @csrf
-        <button type="submit">upload</button>
+
     </form>
     <script type="text/javascript">
         Dropzone.options.dropzone =
@@ -26,6 +26,8 @@
                     var time = dt.getTime();
                     return time+file.name;
                 },
+                resizeWidth:400,
+                resizeHeight:400,
                 acceptedFiles: ".jpeg,.jpg,.png,.gif",
                 addRemoveLinks: true,
                 timeout: 5000,
